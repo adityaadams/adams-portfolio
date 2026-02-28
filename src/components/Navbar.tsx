@@ -59,7 +59,7 @@ const Navbar = () => {
   const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
     
-    // Special handling untuk works section
+    // handling untuk works section
     if (href === '#works') {
       const worksSection = document.querySelector('#works');
       if (worksSection) {
@@ -101,7 +101,7 @@ const Navbar = () => {
             {time}
           </div>
 
-          {/* Right: Navigation - Font lebih besar */}
+          {/* Right: Navigation */}
           <nav className="hidden md:flex items-center gap-10">
             {navItems.map((item) => {
               const sectionId = item.href.replace('#', '');

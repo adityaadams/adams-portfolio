@@ -77,7 +77,7 @@ const About: React.FC = () => {
       // Timeline untuk Experience Card (Tier 2)
       const tl2 = gsap.timeline({
         scrollTrigger: {
-          trigger: tier2Ref.current, // Trigger berdasarkan card itu sendiri
+          trigger: tier2Ref.current,
           start: 'top 85%',
           end: 'top 40%',
           toggleActions: 'play none none reverse'
@@ -133,13 +133,15 @@ const About: React.FC = () => {
       ref={sectionRef}
       id="about"
       className="relative w-full bg-[#F8F7F4] pt-10 md:pt-16 pb-24 px-6 md:px-12 overflow-hidden"
-  >
+    >
       <div className="max-w-[1400px] mx-auto">
         
         {/* Section Heading */}
         <h2
+          id="about-heading"
           ref={headingRef}
-          className="font-display font-bold text-7xl md:text-8xl lg:text-9xl lowercase tracking-[-0.05em] text-foreground mb-4 md:mb-6 opacity-0 uppercase">
+          className="font-display font-bold text-7xl md:text-8xl lg:text-9xl lowercase tracking-[-0.05em] text-foreground mb-4 md:mb-6 opacity-0 uppercase"
+        >
           about.
         </h2>
 
@@ -151,10 +153,9 @@ const About: React.FC = () => {
             ref={tier1Ref}
             className="w-full bg-white rounded-2xl p-6 md:p-8 opacity-0"
           >
-            {/* PERBAIKAN: Gunakan md:grid-cols-12 dan items-stretch */}
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-stretch">
               
-              {/* Left - Profile Image (4 dari 12 kolom) */}
+              {/* Left - Profile Image */}
               <div ref={imageRef} className="opacity-0 md:col-span-4 h-full">
                 <div className="aspect-square w-full h-full overflow-hidden rounded-xl">
                   <img
@@ -165,8 +166,7 @@ const About: React.FC = () => {
                 </div>
               </div>
 
-              {/* Right - Bio, Skills, Values (8 dari 12 kolom) */}
-              {/* PERBAIKAN: justify-between agar konten menempel ke atas dan bawah foto */}
+              {/* Right - Bio, Skills, Values */}
               <div className="md:col-span-8 flex flex-col justify-between h-full space-y-5">
                 
                 {/* Brief Bio */}
@@ -179,49 +179,50 @@ const About: React.FC = () => {
                   </p>
                 </div>
 
-                {/* Wrapper untuk Skills & Values agar di bawah */}
+                {/* Wrapper untuk Skills & Values */}
                 <div className="space-y-5 pt-4 border-t border-black/5">
-                    {/* Core Skills */}
-                    <div ref={skillsRef} className="space-y-2 opacity-0">
-                    <h4 className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#0E0E0E]/40">CORE SKILLS</h4>
+                  
+                  {/* Core Skills */}
+                  <div ref={skillsRef} className="space-y-2 opacity-0">
+                    <h3 className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#0E0E0E]/40">CORE SKILLS</h3>
                     <div className="flex flex-wrap gap-1.5">
-                        <span className="text-[11px] px-2.5 py-1 bg-[#0E0E0E]/5 text-[#0E0E0E]/70 rounded-full">JavaScript/TS</span>
-                        <span className="text-[11px] px-2.5 py-1 bg-[#0E0E0E]/5 text-[#0E0E0E]/70 rounded-full">React/Next.js</span>
-                        <span className="text-[11px] px-2.5 py-1 bg-[#0E0E0E]/5 text-[#0E0E0E]/70 rounded-full">Node.js</span>
-                        <span className="text-[11px] px-2.5 py-1 bg-[#0E0E0E]/5 text-[#0E0E0E]/70 rounded-full">Python</span>
-                        <span className="text-[11px] px-2.5 py-1 bg-[#0E0E0E]/5 text-[#0E0E0E]/70 rounded-full">MongoDB</span>
-                        <span className="text-[11px] px-2.5 py-1 bg-[#0E0E0E]/5 text-[#0E0E0E]/70 rounded-full">GSAP</span>
+                      <span className="text-[11px] px-2.5 py-1 bg-[#0E0E0E]/5 text-[#0E0E0E]/70 rounded-full">JavaScript/TS</span>
+                      <span className="text-[11px] px-2.5 py-1 bg-[#0E0E0E]/5 text-[#0E0E0E]/70 rounded-full">React/Next.js</span>
+                      <span className="text-[11px] px-2.5 py-1 bg-[#0E0E0E]/5 text-[#0E0E0E]/70 rounded-full">Node.js</span>
+                      <span className="text-[11px] px-2.5 py-1 bg-[#0E0E0E]/5 text-[#0E0E0E]/70 rounded-full">Python</span>
+                      <span className="text-[11px] px-2.5 py-1 bg-[#0E0E0E]/5 text-[#0E0E0E]/70 rounded-full">MongoDB</span>
+                      <span className="text-[11px] px-2.5 py-1 bg-[#0E0E0E]/5 text-[#0E0E0E]/70 rounded-full">GSAP</span>
                     </div>
-                    </div>
+                  </div>
 
-                    {/* Key Values */}
-                    <div ref={valuesRef} className="space-y-2 opacity-0">
-                    <h4 className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#0E0E0E]/40">KEY VALUES</h4>
+                  {/* Key Values */}
+                  <div ref={valuesRef} className="space-y-2 opacity-0">
+                    <h3 className="text-[9px] font-bold uppercase tracking-[0.3em] text-[#0E0E0E]/40">KEY VALUES</h3>
                     <div className="grid grid-cols-2 gap-x-4 gap-y-2">
-                        <div className="flex items-center gap-2">
+                      <div className="flex items-center gap-2">
                         <span className="w-1 h-1 bg-[#0E0E0E]/30 rounded-full"></span>
                         <span className="text-xs text-[#0E0E0E]/70">Timeliness</span>
-                        </div>
-                        <div className="flex items-center gap-2">
+                      </div>
+                      <div className="flex items-center gap-2">
                         <span className="w-1 h-1 bg-[#0E0E0E]/30 rounded-full"></span>
                         <span className="text-xs text-[#0E0E0E]/70">Clear Communication</span>
-                        </div>
-                        <div className="flex items-center gap-2">
+                      </div>
+                      <div className="flex items-center gap-2">
                         <span className="w-1 h-1 bg-[#0E0E0E]/30 rounded-full"></span>
                         <span className="text-xs text-[#0E0E0E]/70">Attention to Detail</span>
-                        </div>
-                        <div className="flex items-center gap-2">
+                      </div>
+                      <div className="flex items-center gap-2">
                         <span className="w-1 h-1 bg-[#0E0E0E]/30 rounded-full"></span>
                         <span className="text-xs text-[#0E0E0E]/70">Problem Solving</span>
-                        </div>
+                      </div>
                     </div>
-                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* TIER 2: Experience Card - Tetap Sama */}
+          {/* TIER 2: Experience Card */}
           <div
             ref={tier2Ref}
             className="w-full bg-white rounded-2xl p-6 md:p-8 opacity-0"
@@ -234,9 +235,11 @@ const About: React.FC = () => {
                   experience
                 </h3>
                 <div className="flex items-center gap-3">
+                  {/* Previous Button */}
                   <button
                     onClick={prevExp}
                     disabled={currentExp === 0}
+                    aria-label="Previous experience"
                     className={`p-1.5 rounded-full border border-[#0E0E0E]/20 hover:border-[#0E0E0E]/60 transition-all ${
                       currentExp === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-[#0E0E0E]/5'
                     }`}
@@ -245,9 +248,12 @@ const About: React.FC = () => {
                       <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
                     </svg>
                   </button>
+                  
+                  {/* Next Button */}
                   <button
                     onClick={nextExp}
                     disabled={currentExp === experiencesData.length - 1}
+                    aria-label="Next experience"
                     className={`p-1.5 rounded-full border border-[#0E0E0E]/20 hover:border-[#0E0E0E]/60 transition-all ${
                       currentExp === experiencesData.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-[#0E0E0E]/5'
                     }`}

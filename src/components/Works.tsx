@@ -14,7 +14,7 @@ const Works: React.FC<WorksProps> = ({ onHeroFade }) => {
   const itemsRef = useRef<(HTMLDivElement | null)[]>([]);
   const [expandedIndex, setExpandedIndex] = useState<number | null>(null);
 
-  // Hero fade out effect saat scroll
+  // Hero fade out 
   useEffect(() => {
     if (!sectionRef.current || !onHeroFade) return;
 
@@ -124,7 +124,7 @@ const Works: React.FC<WorksProps> = ({ onHeroFade }) => {
         <div className="space-y-16 md:space-y-20">
           {worksData.map((work, index) => (
             <div key={work.id}>
-              {/* Horizontal Line dengan animasi */}
+              {/* Horizontal Line */}
               {index > 0 && (
                 <hr
                   id={`line-${index}`}
@@ -140,7 +140,7 @@ const Works: React.FC<WorksProps> = ({ onHeroFade }) => {
                 }}
                 className="relative grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-10 opacity-0"
               >
-                {/* Date - Margin Kiri Lebar */}
+                {/* Date */}
                 <div className="lg:col-span-1 lg:col-start-1">
                   <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-foreground/40">
                     {work.date}
@@ -191,7 +191,7 @@ const Works: React.FC<WorksProps> = ({ onHeroFade }) => {
                       </p>
                     </div>
 
-                    {/* Default View - Tech Stack (selalu tampil) */}
+                    {/* Default View - Tech Stack */}
                     <div className="space-y-3">
                       <div className="flex items-center gap-4">
                         <span className="text-[11px] font-bold uppercase tracking-[0.2em] text-foreground/30 min-w-[55px]">
@@ -249,7 +249,7 @@ const Works: React.FC<WorksProps> = ({ onHeroFade }) => {
                       </svg>
                     </button>
 
-                    {/* Expanded View - STAR Method (muncul saat klik) */}
+                    {/* Expanded View - STAR Method */}
                     <div
                       className={`transition-all duration-500 overflow-hidden ${
                         expandedIndex === index

@@ -101,10 +101,9 @@ const Hero: React.FC<HeroProps> = ({
       ref={containerRef}
       className="relative w-full min-h-screen bg-background text-foreground overflow-hidden"
     >
-      {/* Menggunakan h-screen agar layout tetap dalam satu layar */}
       <div className="relative h-screen flex flex-col justify-between pt-32 pb-12 px-6 md:px-12">
         <div className="flex flex-col md:block flex-1 relative">
-          {/* Typography Layer - Z-20 agar di atas foto */}
+          {/* Typography Layer */}
           <div className="relative z-20 mb-[-20vh] md:mb-0 md:absolute md:top-1/2 md:-translate-y-1/2 md:left-0 pointer-events-none">
             <div className="overflow-hidden">
               <h1
@@ -157,11 +156,6 @@ const Hero: React.FC<HeroProps> = ({
             <div className="overflow-hidden">
               <p
                 ref={textRefs.description}
-                /* KOREKSI UKURAN: 
-         - text-lg: Ukuran cukup besar di Mobile (18px)
-         - md:text-2xl: Ukuran sangat besar di Desktop (24px) agar seimbang dengan Hero
-         - leading-tight: Agar jarak antar baris tetap rapat & rapi saat teks membesar
-      */
                 className="text-lg md:text-2xl text-foreground/80 max-w-xl md:max-w-2xl leading-tight translate-y-full"
               >
                 {description}

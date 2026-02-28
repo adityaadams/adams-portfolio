@@ -109,6 +109,7 @@ const Testimonials: React.FC = () => {
         
         {/* Section Heading */}
         <h2
+          id="testimonials-heading"
           ref={headingRef}
           className="font-display font-bold text-7xl md:text-8xl lg:text-9xl lowercase tracking-[-0.05em] text-foreground mb-4 md:mb-6 opacity-0 uppercase"
         >
@@ -130,7 +131,7 @@ const Testimonials: React.FC = () => {
           {/* Content Container */}
           <div className="flex flex-col items-center text-center space-y-6"> 
             
-            {/* Avatar - ukuran diperkecil */}
+            {/* Avatar */}
             <div className="w-16 h-16 md:w-20 md:h-20 rounded-full overflow-hidden"> 
               <img
                 ref={avatarRef}
@@ -140,7 +141,7 @@ const Testimonials: React.FC = () => {
               />
             </div>
 
-            {/* Quote*/}
+            {/* Quote */}
             <p
               ref={quoteRef}
               className="text-lg md:text-xl lg:text-2xl leading-tight text-[#0E0E0E]/80 max-w-2xl mx-auto font-light" 
@@ -150,15 +151,15 @@ const Testimonials: React.FC = () => {
 
             {/* Client Info */}
             <div ref={clientInfoRef} className="space-y-1"> 
-              <h4 className="text-sm md:text-base font-bold uppercase tracking-tight text-[#0E0E0E]"> 
+              <h3 className="text-sm md:text-base font-bold uppercase tracking-tight text-[#0E0E0E]"> 
                 {currentTestimonial.clientName}
-              </h4>
+              </h3>
               <p className="text-[10px] font-mono uppercase tracking-wider text-black/50">
                 {currentTestimonial.clientRole}, {currentTestimonial.clientCompany}
               </p>
             </div>
 
-            {/* Pagination Dots*/}
+            {/* Pagination Dots */}
             <div ref={dotsRef} className="flex justify-center gap-2 pt-2">
               {testimonialsData.map((_, index) => (
                 <button
@@ -191,6 +192,8 @@ const Testimonials: React.FC = () => {
                       });
                     }
                   }}
+                  aria-label={`Go to testimonial ${index + 1}`}
+                  aria-current={index === currentIndex ? 'true' : 'false'}
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
                     index === currentIndex 
                       ? 'bg-black w-6' 
@@ -203,13 +206,14 @@ const Testimonials: React.FC = () => {
           </div>
 
           {/* Navigation Bottom Bar */}
-          <div className="mt-8 pt-2"> {/* DIPERKECIL: mt-12 pt-4 -> mt-8 pt-2 */}
+          <div className="mt-8 pt-2">
             <div className="grid grid-cols-2 divide-x divide-black/10">
               {/* PREV Button */}
               <button
                 onClick={() => navigate('prev')}
                 disabled={isAnimating}
-                className="py-3 text-xs font-medium uppercase tracking-[0.2em] text-black/60 hover:bg-black hover:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed" // DIPERKECIL: py-4 text-sm -> py-3 text-xs
+                aria-label="Previous testimonial"
+                className="py-3 text-xs font-medium uppercase tracking-[0.2em] text-black/60 hover:bg-black hover:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 PREV
               </button>
@@ -218,7 +222,8 @@ const Testimonials: React.FC = () => {
               <button
                 onClick={() => navigate('next')}
                 disabled={isAnimating}
-                className="py-3 text-xs font-medium uppercase tracking-[0.2em] text-black/60 hover:bg-black hover:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed" // DIPERKECIL: py-4 text-sm -> py-3 text-xs
+                aria-label="Next testimonial"
+                className="py-3 text-xs font-medium uppercase tracking-[0.2em] text-black/60 hover:bg-black hover:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 NEXT
               </button>

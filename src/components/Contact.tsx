@@ -205,6 +205,7 @@ const Contact: React.FC = () => {
         
         {/* Headline */}
         <h2
+          id="contact-heading"
           ref={headlineRef}
           className="font-display font-bold text-5xl md:text-6xl lg:text-7xl tracking-tight text-[#0E0E0E] max-w-4xl leading-[1.1] mb-12 md:mb-16 opacity-0"
         >
@@ -214,7 +215,7 @@ const Contact: React.FC = () => {
         {/* Grid Layout */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 relative">
           
-          {/* Left Side - Form (60%) */}
+          {/* Left Side - (60%) */}
           <div className="lg:col-span-7">
             <form ref={formRef} onSubmit={handleSubmit} className="space-y-8">
               
@@ -297,7 +298,7 @@ const Contact: React.FC = () => {
             </form>
           </div>
 
-          {/* Right Side - Details (40%) */}
+          {/* Right Side - (40%) */}
           <div
             ref={detailsRef}
             className="lg:col-span-4 lg:col-start-9 space-y-8 opacity-0 lg:translate-y-[-20px]"
@@ -309,7 +310,7 @@ const Contact: React.FC = () => {
               </h3>
               <div className="space-y-2">
                 <a
-                  href="mailto:nikunjmathur0810@gmail.com"
+                  href="mailto:adamssaditya@gmail.com"
                   className="flex items-center gap-3 text-sm text-black/70 hover:text-black transition-colors group"
                 >
                   <Mail size={14} className="text-black/40 group-hover:text-black transition-colors" />
@@ -394,7 +395,11 @@ const Contact: React.FC = () => {
             Designed and coded with <span className="text-red-500">❤️</span>
           </div>
 
-          <button onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} className="flex items-center gap-2 hover:opacity-50 transition-opacity">
+          <button 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })} 
+            aria-label="Back to top"
+            className="flex items-center gap-2 hover:opacity-50 transition-opacity"
+          >
             BACK TO TOP 
             <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
               <path d="M18 15l-6-6-6 6" />

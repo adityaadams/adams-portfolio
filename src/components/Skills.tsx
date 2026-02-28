@@ -106,11 +106,12 @@ const Skills: React.FC = () => {
     <section
       ref={sectionRef}
       id="skills"
-      className="relative w-full bg-[#F8F7F4] py-12 md:py-16 px-6 md:px-12 overflow-hidden" // HANYA INI YANG DIUBAH: py-24 md:py-32 -> py-12 md:py-16
+      className="relative w-full bg-[#F8F7F4] py-12 md:py-16 px-6 md:px-12 overflow-hidden"
     >
       <div className="max-w-[1400px] mx-auto">
         {/* Section Heading */}
         <h2
+          id="skills-heading"
           ref={headingRef}
           className="font-display font-bold text-7xl md:text-8xl lg:text-9xl lowercase tracking-[-0.05em] text-foreground mb-4 md:mb-6 opacity-0 uppercase"
         >
@@ -121,7 +122,6 @@ const Skills: React.FC = () => {
         {!isMobile && (
           <div
             ref={containerRef}
-            /* h-[600px] dan flex w-full memastikan kolom mengisi seluruh lebar */
             className="flex w-full h-[600px] border border-[#0E0E0E]/10 rounded-2xl overflow-hidden bg-white opacity-0"
           >
             {skillsData.map((skill, index) => (
@@ -130,12 +130,11 @@ const Skills: React.FC = () => {
                 ref={(el) => {
                   columnsRef.current[index] = el;
                 }}
-                /* flex-1 adalah kunci agar tidak ada gap di sebelah kanan */
                 className="relative h-full border-r border-[#0E0E0E]/10 last:border-r-0 overflow-hidden cursor-pointer flex-1"
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >
-                {/* ID / Serial Number - TETAP SEPERTI SEMULA */}
+                {/* ID / Serial Number */}
                 <div className="absolute top-6 left-6 z-10">
                   <span className="text-[10px] font-bold tracking-[0.3em] text-[#0E0E0E]/30 font-mono uppercase">
                     00-{index + 1}
@@ -160,7 +159,7 @@ const Skills: React.FC = () => {
                     </h4>
                   </div>
 
-                  {/* Tech Stack - Ukuran Proposional */}
+                  {/* Tech Stack */}
                   <div className="flex-1 flex flex-col justify-center">
                     <div className="space-y-2 mb-6">
                       {skill.techStack.map((tech, i) => (
@@ -174,7 +173,7 @@ const Skills: React.FC = () => {
                     </div>
                   </div>
 
-                  {/* Deskripsi (Bagian Bawah) */}
+                  {/* Deskripsi */}
                   <div className="pt-6 border-t border-black/5">
                     <p className="text-[11px] leading-relaxed text-[#0E0E0E]/60 uppercase font-medium max-w-xs">
                       {skill.description}

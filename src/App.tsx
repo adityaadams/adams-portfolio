@@ -12,7 +12,7 @@ import Skills from './components/Skills';
 import Testimonials from './components/Testimonials';
 import Contact from './components/Contact';
 
-// Register GSAP plugins
+// GSAP plugins
 gsap.registerPlugin(ScrollTrigger, useGSAP, CustomEase);
 CustomEase.create('premium', '0.76, 0, 0.24, 1');
 
@@ -40,43 +40,45 @@ function App() {
     >
       <Navbar />
       
-      {/* HERO Section */}
-      <div
-        id="hero"
-        ref={heroRef}
-        style={{
-          opacity: heroOpacity,
-          transform: `translateY(-${heroY}px)`,
-          transition: 'opacity 0.2s ease, transform 0.2s ease'
-        }}
-      >
-        <Hero />
-      </div>
-      
-      {/* WORKS Section */}
-      <section id="works">
-        <Works onHeroFade={handleHeroFade} />
-      </section>
+      {/* MAIN CONTENT */}
+      <main id="main-content">
+        {/* HERO Section */}
+        <div
+          id="hero"
+          ref={heroRef}
+          style={{
+            opacity: heroOpacity,
+            transform: `translateY(-${heroY}px)`,
+            transition: 'opacity 0.2s ease, transform 0.2s ease'
+          }}
+        >
+          <Hero />
+        </div>
+        {/* WORKS Section */}
+        <section id="works" aria-labelledby="works-heading">
+          <Works onHeroFade={handleHeroFade} />
+        </section>
 
-      {/* ABOUT Section */}
-      <section id="about">
-        <About />
-      </section>
+        {/* ABOUT Section */}
+        <section id="about" aria-labelledby="about-heading">
+          <About />
+        </section>
 
-      {/* SKILLS Section */}
-      <section id="skills">
-        <Skills />
-      </section>
+        {/* SKILLS Section */}
+        <section id="skills" aria-labelledby="skills-heading">
+          <Skills />
+        </section>
 
-      {/* TESTIMONIALS Section */}
-      <section id="testimonials">
-        <Testimonials />
-      </section>
+        {/* TESTIMONIALS Section */}
+        <section id="testimonials" aria-labelledby="testimonials-heading">
+          <Testimonials />
+        </section>
 
-      {/* CONTACT Section */}
-      <section id="contact">
-        <Contact />
-      </section>
+        {/* CONTACT Section */}
+        <section id="contact" aria-labelledby="contact-heading">
+          <Contact />
+        </section>
+      </main>
     </div>
   );
 }
