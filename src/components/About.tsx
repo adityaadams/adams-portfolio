@@ -2,7 +2,7 @@ import React, { useRef, useState } from 'react';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { experiencesData } from '../types/about';
-import profileImage from '../assets/adamss2.webp'
+import profileImage from '../assets/adams2.webp'
 
 const About: React.FC = () => {
   const sectionRef = useRef<HTMLElement>(null);

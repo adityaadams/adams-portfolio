@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "./ui/Button";
-import heroImage from "../assets/adams1.webp";
+import heroImage from "../assets/adamss1.webp";
 
 interface HeroProps {
   firstName?: string;
