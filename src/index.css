@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@theme {
+  /* Editorial Color Palette */
+  --color-background: #f8f7f4;
+  --color-foreground: #0e0e0e;
+  --color-accent: #ff4500;
+  
+  /* Font Definitions - Hanya Bricolage Grotesque */
+  --font-display: "Bricolage Grotesque", sans-serif;
+  --font-sans: "Bricolage Grotesque", sans-serif;
+  
+  /* Fluid Typography Scale */
+  --text-xs: clamp(0.75rem, 2vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 2.5vw, 1rem);
+  --text-base: clamp(1rem, 3vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 4vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 5vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 6vw, 2rem);
+  --text-3xl: clamp(2rem, 8vw, 3rem);
+  --text-4xl: clamp(3rem, 12vw, 5rem);
+  --text-5xl: clamp(4rem, 16vw, 8rem);
+  --text-6xl: clamp(6rem, 20vw, 12rem);
+  
+  /* Spacing */
+  --spacing-section: clamp(4rem, 10vw, 8rem);
+  
+  /* Easing Premium */
+  --ease-premium: cubic-bezier(0.76, 0, 0.24, 1);
+  
+  /* Editorial Tracking */
+  --tracking-editorial: 0.3em;
+}
+
+/* Micro-texture background */
+body {
+  background-color: var(--color-background);
+  position: relative;
+  color: var(--color-foreground);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Noise texture */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.02'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.35;
+  mix-blend-mode: multiply;
+}
+
+/* Text masking */
+.text-mask {
+  overflow: hidden;
+}
+
+.text-mask > * {
+  display: block;
+  will-change: transform;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-background);
+}
