@@ -7,9 +7,9 @@ export interface TestimonialItem {
   avatar: string;
 }
 
-import avatar1 from '../assets/olivia.webp';
-import avatar2 from '../assets/chen.webp';
-import avatar3 from '../assets/sophie.webp';
+import avatar1 from '../assets/oliivvia.webp';
+import avatar2 from '../assets/chen2.webp';
+import avatar3 from '../assets/shopiee.webp';
 
 export const testimonialsData: TestimonialItem[] = [
   {

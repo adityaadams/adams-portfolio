@@ -3,7 +3,7 @@ import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "./ui/Button";
-import heroImage from "../assets/Hero1.webp";
+import heroImage from "../assets/adityaa.webp";
 
 interface HeroProps {
   firstName?: string;
@@ -135,6 +135,7 @@ const Hero: React.FC<HeroProps> = ({
                 ref={imageInnerRef}
                 src={heroImage}
                 alt={`${firstName} ${lastName}`}
+                fetchPriority="high" 
                 className="w-full h-full object-cover grayscale opacity-80 md:opacity-100"
                 loading="eager"
               />

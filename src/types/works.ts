@@ -15,10 +15,10 @@ export interface WorkItem {
 }
 
 // Import semua gambar lokal
-import signieImg from '../assets/work1.webp';
-import notRiskImg from '../assets/works2.webp';
-import evincoImg from '../assets/works3.webp';
-import circuitImg from '../assets/works4.webp';
+import signieImg from '../assets/workk1.webp';
+import notRiskImg from '../assets/workk2.webp';
+import evincoImg from '../assets/workk3.webp';
+import circuitImg from '../assets/workk4.webp';
 
 export const worksData: WorkItem[] = [
   {
