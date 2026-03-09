@@ -15,69 +15,69 @@ export interface WorkItem {
 }
 
 // Import semua gambar lokal
-import signieImg from '../assets/project1.webp';
-import notRiskImg from '../assets/project2.webp';
-import evincoImg from '../assets/project3.webp';
-import circuitImg from '../assets/project4.webp';
+import signieImg from '../assets/pj1.webp';
+import notRiskImg from '../assets/pj2.webp';
+import evincoImg from '../assets/pj3.webp';
+import circuitImg from '../assets/pj4.webp';
 
 export const worksData: WorkItem[] = [
   {
     id: '01',
-    date: 'March 2025',
-    title: 'Signie',
-    description: 'Gamified Sign Language Learning',
-    category: 'Web App • Full Stack Development',
-    situation: 'Breaking communication barriers for deaf communities with limited access to sign language education.',
-    task: 'Develop a real-time, on-device gesture recognition web app that makes learning sign language engaging and accessible.',
-    action: 'Built with React Native and Expo for cross-platform compatibility. Integrated MediaPipe Hands for real-time hand tracking and trained a custom CNN on ASL datasets. Implemented gamification mechanics and Firebase for auth & progress sync.',
-    result: '94% gesture recognition accuracy with 50k+ active learners in first month',
-    resultHighlight: '94%',
-    tags: ['React Native', 'Expo', 'MediaPipe', 'Firebase', 'CNN'],
+    date: 'February 2026',
+    title: 'The Digital Canvas',
+    description: 'Architecting a High-Performance Editorial Identity Website',
+    category: 'Frontend • Web Development',
+    situation: "Traditional portfolios often fail to demonstrate a developer's mastery over complex layouts and high-end performance standards.",
+    task: 'Engineer a typography-driven, high-performance SPA that merges minimalist editorial aesthetics with flawless technical execution.',
+    action: 'Developed a custom React architecture with Tailwind CSS. Orchestrated fluid micro-interactions using GSAP and optimized asset delivery via lazy-loading to minimize Time to Interactive (TTI).',
+    result: 'Successfully launched a personal site that is 90%+ mobile-friendly, providing a smooth and professional experience for everyone.',
+    resultHighlight: '90%+',
+    tags: ['React.js', 'Tailwind CSS', 'GSAP', 'Vercel'],
     thumbnail: signieImg,
     link: '#'
   },
   {
     id: '02',
-    date: 'February 2025',
-    title: '(not)-RISK',
-    description: 'Receipts, Insurance & Services Keeper',
-    category: 'SaaS • Full Stack Development',
-    situation: 'People lose important receipts and miss warranty claims, costing millions in unclaimed value annually.',
-    task: 'Create a digital vault that automatically organizes receipts and tracks insurance policies with smart reminders.',
-    action: 'Built responsive frontend with React + TailwindCSS. Developed Node.js/Express REST API with MongoDB for scalable storage. Implemented JWT authentication and scheduled cron jobs for automated warranty expiration reminders.',
-    result: '10k+ receipts processed monthly with 95% user retention',
-    resultHighlight: '10k+',
-    tags: ['React', 'Node.js', 'Express', 'MongoDB', 'JWT'],
+    date: 'February 2026',
+    title: 'FlowState OS',
+    description: 'A Simple & Secure To-Do App',
+    category: 'Full Stack • Productivity Tool',
+    situation: 'Most basic to-do lists lose your data when you refresh the page or change devices.',
+    task: 'Build a task manager that saves your work safely in a structured database and requires a secure login.',
+    action: 'I built the app using Node.js and Express. I used PostgreSQL to store tasks in organized tables and added a login system so only you can see your data. I also made sure the UI updates instantly.',
+    result: 'Created a reliable app with 95% data accuracy, helping users stay organized without losing their progress.',
+    resultHighlight: '95%',
+    tags: ['PostgreSQL', 'Express.js', 'React', 'Node.js'],
     thumbnail: notRiskImg,
     link: '#'
   },
   {
     id: '03',
-    date: 'January 2025',
-    title: 'Evinco',
-    description: 'Event • Interact • Connect',
-    category: 'Web Design • Full Stack Development',
-    situation: 'Event organizers struggle to create engaging hybrid experiences that foster genuine connections.',
-    task: 'Design and build a platform where events come alive with seamless interaction and networking.',
-    action: 'Architected React frontend with CSS Grid/Flexbox for responsive layouts. Built Node.js backend with Socket.io for real-time messaging and live Q&A. Implemented JWT refresh token rotation for secure authentication across devices.',
-    result: '50k+ events hosted across 12 countries with 4.8/5 user rating',
-    resultHighlight: '50k+',
-    tags: ['React', 'Node.js', 'Socket.io', 'MongoDB', 'JWT'],
+    date: 'March 2026',
+    title: 'ZeroBug Community',
+    description: 'A Friendly Forum for Helping Developers',
+    category: 'Full Stack • Community Site',
+    situation: 'New developers often get stuck on errors and need a clear place to ask for help and find answers.',
+    task: 'Create a forum where people can post questions, leave comments, and vote for the best solutions.',
+    action: 'I used Next.js to make the website fast and easy for Google to find. I connected it to a PostgreSQL database via Prisma ORM to manage all the posts and user comments safely.',
+    result: 'Built a community space with a 90% positive user satisfaction feel, making it easier for beginners to solve their coding bugs.',
+    resultHighlight: '90%',
+    tags: ['Next.js', 'TypeScript', 'PostgreSQL', 'Prisma'],
     thumbnail: evincoImg,
     link: '#'
   },
   {
     id: '04',
-    date: 'December 2024',
-    title: 'Circuit Creations',
-    description: 'Interactive Digital Logic Design',
-    category: 'Educational Tool • Frontend Development',
-    situation: 'Computer science students struggle with abstract logic gate concepts without hands-on experimentation.',
-    task: 'Build an interactive tool where students can visually design and simulate digital circuits in real-time.',
-    action: 'Developed component-driven UI with React and TailwindCSS. Created custom JavaScript evaluation engine for logic simulation. Utilized Canvas API for rendering circuit visualization with drag-and-drop functionality.',
-    result: 'Adopted by 200+ universities worldwide with 92% improved student comprehension',
-    resultHighlight: '200+',
-    tags: ['React', 'TailwindCSS', 'Canvas API', 'JavaScript'],
+    date: 'March 2026',
+    title: 'CineLens Engine',
+    description: 'A Movie Search & Discovery App.',
+    category: 'Frontend • Data Fetching',
+    situation: 'It’s often hard to find movie details quickly because there is so much information to load at once.',
+    task: 'Build a search engine that finds any movie in seconds and shows the details in a beautiful way.',
+    action: 'I connected the app to a real movie database (TMDB API). I added a "loading skeleton" so the app feels smooth while fetching data and used Framer Motion for nice transitions between pages.',
+    result: 'Developed a high-speed search tool with 98% UI responsiveness, allowing users to explore 500k+ movies without any lag',
+    resultHighlight: '98%',
+    tags: ['React', 'Axios', 'TMDB API', 'Framer Motion'],
     thumbnail: circuitImg,
     link: '#'
   }

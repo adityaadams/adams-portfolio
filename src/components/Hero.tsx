@@ -15,7 +15,7 @@ interface HeroProps {
 const Hero: React.FC<HeroProps> = ({
   firstName = "Aditya",
   lastName = "adam",
-  description = "Full-Stack Web Developer & Architect  · Architecting scalable digital systems and high-performance web experiences.",
+  description = "Full-Stack Web Developer · Building high-performance web experiences by breaking code and leveraging every modern tool.",
   location = "JAKARTA",
 }) => {
   const containerRef = useRef<HTMLElement>(null);

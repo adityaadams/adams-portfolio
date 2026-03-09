@@ -16,7 +16,7 @@ const About: React.FC = () => {
   const lineRef = useRef<HTMLHRElement>(null);
   const expHeaderRef = useRef<HTMLDivElement>(null);
   const expContentRef = useRef<HTMLDivElement>(null);
-  const [currentExp, setCurrentExp] = useState(0);
+  const [showDetails, setShowDetails] = useState(false);
 
   useGSAP(() => {
     const ctx = gsap.context(() => {
@@ -108,25 +108,6 @@ const About: React.FC = () => {
     return () => ctx.revert();
   }, []);
 
-  const nextExp = () => {
-    if (currentExp < experiencesData.length - 1) {
-      setCurrentExp(currentExp + 1);
-      gsap.fromTo(expContentRef.current,
-        { x: 20, opacity: 0.5 },
-        { x: 0, opacity: 1, duration: 0.8, ease: 'power4.out' }
-      );
-    }
-  };
-
-  const prevExp = () => {
-    if (currentExp > 0) {
-      setCurrentExp(currentExp - 1);
-      gsap.fromTo(expContentRef.current,
-        { x: -20, opacity: 0.5 },
-        { x: 0, opacity: 1, duration: 0.8, ease: 'power4.out' }
-      );
-    }
-  };
 
   return (
     <section
@@ -172,10 +153,10 @@ const About: React.FC = () => {
                 {/* Brief Bio */}
                 <div ref={bioRef} className="space-y-3 opacity-0">
                   <p className="text-xl md:text-2xl leading-snug text-[#0E0E0E]/90 font-light">
-                    I'm a full-stack web developer and architect based in Jakarta, passionate about building digital experiences that are both beautiful and functional.
+                    I’m a Full-Stack Web Developer currently diving deep into the world of modern web technologies. I spend my days building, breaking, and "GPT-ing" my way through complex challenges to create high-performance web experiences.
                   </p>
                   <p className="text-sm text-[#0E0E0E]/70 leading-relaxed">
-                    My journey into web development started 6 years ago, driven by curiosity about how technology can solve real problems. Since then, I've helped startups and enterprises transform complex ideas into scalable, performant applications.
+                    My journey is fueled by a mix of curiosity, late-night Googling, and a passion for turning complex problems into clean, functional code. I don’t just write code; I’m on a mission to master the art of building scalable web applications, one bug at a time.
                   </p>
                 </div>
 
@@ -189,8 +170,7 @@ const About: React.FC = () => {
                       <span className="text-[11px] px-2.5 py-1 bg-[#0E0E0E]/5 text-[#0E0E0E]/70 rounded-full">JavaScript/TS</span>
                       <span className="text-[11px] px-2.5 py-1 bg-[#0E0E0E]/5 text-[#0E0E0E]/70 rounded-full">React/Next.js</span>
                       <span className="text-[11px] px-2.5 py-1 bg-[#0E0E0E]/5 text-[#0E0E0E]/70 rounded-full">Node.js</span>
-                      <span className="text-[11px] px-2.5 py-1 bg-[#0E0E0E]/5 text-[#0E0E0E]/70 rounded-full">Python</span>
-                      <span className="text-[11px] px-2.5 py-1 bg-[#0E0E0E]/5 text-[#0E0E0E]/70 rounded-full">MongoDB</span>
+                      <span className="text-[11px] px-2.5 py-1 bg-[#0E0E0E]/5 text-[#0E0E0E]/70 rounded-full">Tailwind</span>
                       <span className="text-[11px] px-2.5 py-1 bg-[#0E0E0E]/5 text-[#0E0E0E]/70 rounded-full">GSAP</span>
                     </div>
                   </div>
@@ -234,35 +214,25 @@ const About: React.FC = () => {
                 <h3 className="text-[16px] font-bold uppercase tracking-[0.3em] text-[#0E0E0E]/40">
                   experience
                 </h3>
-                <div className="flex items-center gap-3">
-                  {/* Previous Button */}
-                  <button
-                    onClick={prevExp}
-                    disabled={currentExp === 0}
-                    aria-label="Previous experience"
-                    className={`p-1.5 rounded-full border border-[#0E0E0E]/20 hover:border-[#0E0E0E]/60 transition-all ${
-                      currentExp === 0 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-[#0E0E0E]/5'
+                
+                {/* TOGGLE DETAILS */}
+                <button
+                  onClick={() => setShowDetails(!showDetails)}
+                  className="group flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#0E0E0E]/40 hover:text-[#0E0E0E] transition-all duration-300"
+                >
+                  <span>{showDetails ? 'SHOW SUMMARY' : 'SHOW DETAILS'}</span>
+                  <svg 
+                    className={`w-3 h-3 transition-transform duration-300 ${
+                      showDetails ? 'rotate-180' : ''
                     }`}
+                    fill="none" 
+                    viewBox="0 0 24 24" 
+                    stroke="currentColor"
+                    strokeWidth={2}
                   >
-                    <svg className="w-4 h-4 text-[#0E0E0E]/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" />
-                    </svg>
-                  </button>
-                  
-                  {/* Next Button */}
-                  <button
-                    onClick={nextExp}
-                    disabled={currentExp === experiencesData.length - 1}
-                    aria-label="Next experience"
-                    className={`p-1.5 rounded-full border border-[#0E0E0E]/20 hover:border-[#0E0E0E]/60 transition-all ${
-                      currentExp === experiencesData.length - 1 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-[#0E0E0E]/5'
-                    }`}
-                  >
-                    <svg className="w-4 h-4 text-[#0E0E0E]/70" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}>
-                      <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
-                    </svg>
-                  </button>
-                </div>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
               </div>
 
               {/* Garis pemisah */}
@@ -276,25 +246,41 @@ const About: React.FC = () => {
               <div ref={expContentRef} className="space-y-4 opacity-0">
                 <div>
                   <h4 className="font-display font-bold text-2xl md:text-3xl lowercase leading-tight text-[#0E0E0E]">
-                    {experiencesData[currentExp].position}
+                    {experiencesData[0].position}
                   </h4>
                   <p className="text-sm text-[#0E0E0E]/60 mt-1">
-                    {experiencesData[currentExp].company}
+                    {experiencesData[0].company}
                   </p>
                 </div>
                 
                 <div className="text-[10px] font-medium uppercase tracking-wider text-[#0E0E0E]/40">
-                  {experiencesData[currentExp].period}
+                  {experiencesData[0].period}
                 </div>
                 
-                <p className="text-sm leading-relaxed text-[#0E0E0E]/70 max-w-3xl">
-                  {experiencesData[currentExp].description}
-                </p>
+                {/* CONDITIONAL RENDERING */}
+                {!showDetails ? (
+                  /* SUMMARY VIEW */
+                  <p className="text-sm leading-relaxed text-[#0E0E0E]/70 max-w-3xl">
+                    {experiencesData[0].description}
+                  </p>
+                ) : (
+                  /* DETAILS VIEW */
+                  <div className="space-y-3">
+                    {experiencesData[0].responsibilities?.map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-2">
+                        <span className="text-[#0E0E0E]/30 text-xs">◆</span>
+                        <p className="text-sm leading-relaxed text-[#0E0E0E]/70">
+                          {item}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                )}
                 
-                {/* Tech Stack */}
-                {experiencesData[currentExp].tags && (
+                {/* Tech Tags */}
+                {experiencesData[0].tags && (
                   <div className="flex flex-wrap gap-2 pt-2">
-                    {experiencesData[currentExp].tags?.map((tag, idx) => (
+                    {experiencesData[0].tags?.map((tag, idx) => (
                       <span
                         key={idx}
                         className="text-[8px] font-bold uppercase tracking-[0.15em] px-2 py-1 bg-[#0E0E0E]/5 text-[#0E0E0E]/50 rounded"
